@@ -12,8 +12,12 @@ export const SocialBtn = () => {
         padding: "0.5rem 0.3rem",
       }}
     >
-      {/*Boton de contact */}
-      <div className="btn-contact">Contact</div>
+      <a
+        href="mailto:barcenasrosalescesarivan@gmail.com?subject=Contacto%20desde%20mi%20portafolio&body=Hola,%20quiero%20saber%20más%20sobre%20tu%20trabajo."
+        className="btn-contact"
+      >
+        Contact
+      </a>
 
       {/*Botones sociales*/}
       <div
