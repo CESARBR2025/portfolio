@@ -2,6 +2,7 @@ import "../../index.css";
 import { Experience } from "../../components/Experience";
 import { Home } from "../../components/Home";
 import { Projects } from "../../components/Projects";
+import { Educational } from "../../components/Educational";
 
 export const Portafolio = () => {
   function scrollToSection(id: string) {
@@ -45,6 +46,7 @@ export const Portafolio = () => {
                 <p className="font-text-mid">PORTFOLIO PROJECT</p>
               </div>
             </div>
+
             <div
               style={{
                 display: "flex",
@@ -108,6 +110,23 @@ export const Portafolio = () => {
 
         <section id="work" style={{ flex: "5" }}>
           <Projects />
+        </section>
+
+        <section
+          style={{
+            display: "flex",
+            flex: "1",
+            flexDirection: "column",
+            gap: "0.5rem",
+            padding: "1rem",
+            marginTop: "2rem",
+          }}
+        >
+          <div className="font-text-mid">Formation</div>
+          <div className="font-subtitle">Educational</div>
+        </section>
+        <section id="educational">
+          <Educational />
         </section>
       </div>
     </div>

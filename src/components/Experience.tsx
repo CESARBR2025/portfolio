@@ -2,7 +2,14 @@ import "../index.css";
 
 export const Experience = () => {
   return (
-    <div style={{ width: "100%" }}>
+    <div
+      style={{
+        width: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       <div className="timeline">
         <div className="timeline-item">
           <div className="timeline-dot"></div>
