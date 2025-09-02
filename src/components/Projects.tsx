@@ -65,8 +65,8 @@ export const Projects = () => {
             className="font-text"
             style={{ color: "#B8C5BF", marginTop: "1rem" }}
           >
-            Herramienta encargada de monitorear históricamente comportamientos
-            de los enfriadores.
+            Application for tracking and analyzing the historical performance of
+            coolers.
           </p>
           <div style={{ display: "flex", gap: "1rem" }}>
             <div
@@ -76,7 +76,7 @@ export const Projects = () => {
               }}
             >
               <button className="btn-contact" style={{ marginTop: "1rem" }}>
-                Ver proyecto
+                More information
               </button>
             </div>
 
@@ -177,8 +177,8 @@ export const Projects = () => {
             className="font-text"
             style={{ color: "#B8C5BF", marginTop: "1rem" }}
           >
-            Dashboards interactivos que permiten visualizar el estado <br /> del
-            parque de los enfriadores de manera clara y legible
+            Interactive dashboards for clear visualization of the cooler fleet
+            status.
           </p>
           <div style={{ display: "flex", gap: "1rem" }}>
             <div
@@ -188,7 +188,7 @@ export const Projects = () => {
               }}
             >
               <button className="btn-contact" style={{ marginTop: "1rem" }}>
-                Ver proyecto
+                More information
               </button>
             </div>
 

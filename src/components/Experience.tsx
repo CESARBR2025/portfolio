@@ -14,11 +14,11 @@ export const Experience = () => {
         <div className="timeline-item">
           <div className="timeline-dot"></div>
           <div className="timeline-content">
-            <h3 className="font-subtitle">IMBERA</h3>
+            <h3 className="font-subtitle">Imbera México</h3>
             <span className="font-text-mid">Oct 2024 - Ago 2025</span>
             <p className="font-text" style={{ color: "#f8d794" }}>
-              Desarrollo de herramientas web internas para monitoreo de
-              enfriadores, análisis de KPIs y creacion de API's con Django.
+              Developed internal web tools for cooler monitoring, KPI analysis,
+              and API creation using Django.
             </p>
           </div>
         </div>

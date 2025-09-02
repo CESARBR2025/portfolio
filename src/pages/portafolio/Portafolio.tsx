@@ -125,7 +125,10 @@ export const Portafolio = () => {
           <div className="font-text-mid">Formation</div>
           <div className="font-subtitle">Educational</div>
         </section>
-        <section id="educational">
+        <section
+          id="educational"
+          style={{ flex: "2", display: "flex", justifyContent: "center" }}
+        >
           <Educational />
         </section>
       </div>
