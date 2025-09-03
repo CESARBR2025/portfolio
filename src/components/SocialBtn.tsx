@@ -1,6 +1,24 @@
 import "../index.css";
-import { IconBrandInstagram, IconBrandMeta } from "@tabler/icons-react";
+import {
+  IconBrandInstagram,
+  IconFileCv,
+  IconMailForward,
+  IconBrandLinkedin,
+} from "@tabler/icons-react";
+
+import cv from "../assets/documents/cv.pdf";
+
 export const SocialBtn = () => {
+  //Funcion para descargar cv
+  const handleDownloadCv = () => {
+    const link = document.createElement("a");
+    link.href = cv;
+    link.download = "CesarIvanCV.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div
       style={{
@@ -12,14 +30,34 @@ export const SocialBtn = () => {
         padding: "0.5rem 0.3rem",
       }}
     >
-      <a
-        href="mailto:barcenasrosalescesarivan@gmail.com?subject=Contacto%20desde%20mi%20portafolio&body=Hola,%20quiero%20saber%20más%20sobre%20tu%20trabajo."
-        className="btn-contact"
+      <div
+        className="btn-contact-social"
+        style={{ display: "flex", gap: "0.5rem" }}
       >
-        Contact
-      </a>
+        <IconMailForward />
+        <a
+          href="mailto:barcenasrosalescesarivan@gmail.com?subject=Contacto%20desde%20mi%20portafolio&body=Hola,%20quiero%20saber%20más%20sobre%20tu%20trabajo."
+          style={{ color: "#F8D794" }}
+        >
+          Contact
+        </a>
+      </div>
 
       {/*Botones sociales*/}
+      <div onClick={handleDownloadCv} className="btn-contact-social">
+        <IconFileCv />
+      </div>
+      <div
+        onClick={() =>
+          window.open(
+            "https://www.linkedin.com/in/cesar-ivan-barcenas-rosales-a74a83378",
+            "_blank"
+          )
+        }
+        className="btn-contact-social"
+      >
+        <IconBrandLinkedin stroke={2} style={{ height: "1.5rem" }} />
+      </div>
       <div
         style={{
           display: "flex",
@@ -34,14 +72,6 @@ export const SocialBtn = () => {
           }
         >
           <IconBrandInstagram stroke={2} style={{ height: "1.5rem" }} />
-        </div>
-        <div
-          onClick={() =>
-            window.open("https://facebook.com/cesar.rosales.73550 ", "_blank")
-          }
-          className="btn-contact-social"
-        >
-          <IconBrandMeta stroke={2} style={{ height: "1.5rem" }} />
         </div>
       </div>
     </div>

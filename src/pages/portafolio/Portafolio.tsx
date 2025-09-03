@@ -57,17 +57,23 @@ export const Portafolio = () => {
               }}
             >
               <div
-                onClick={() => scrollToSection("home")}
+                onClick={() => scrollToSection("experience")}
                 className="btn-header font-text-mid"
               >
-                <p>Home</p>
+                <p>Experience</p>
+              </div>
+              <div
+                onClick={() => scrollToSection("projects")}
+                className="btn-header font-text-mid"
+              >
+                <p>Projects</p>
               </div>
 
               <div
-                onClick={() => scrollToSection("work")}
+                onClick={() => scrollToSection("formation")}
                 className="btn-header font-text-mid"
               >
-                <p>Work</p>
+                <p>Formation</p>
               </div>
             </div>
           </div>
@@ -91,7 +97,7 @@ export const Portafolio = () => {
           <div className="font-subtitle">Experience</div>
         </section>
 
-        <section id="work" style={{ flex: "5" }}>
+        <section id="experience" style={{ flex: "5" }}>
           <Experience />
         </section>
         <section
@@ -108,7 +114,7 @@ export const Portafolio = () => {
           <div className="font-subtitle">Personal Projects</div>
         </section>
 
-        <section id="work" style={{ flex: "5" }}>
+        <section id="projects" style={{ flex: "5" }}>
           <Projects />
         </section>
 
@@ -126,7 +132,7 @@ export const Portafolio = () => {
           <div className="font-subtitle">Educational</div>
         </section>
         <section
-          id="educational"
+          id="formation"
           style={{ flex: "2", display: "flex", justifyContent: "center" }}
         >
           <Educational />

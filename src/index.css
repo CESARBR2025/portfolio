@@ -255,6 +255,7 @@ align-self: flex-start;
 
 .timeline-item {
   position: relative;
+  margin-top: 1rem;
 }
 
 .timeline-dot{
@@ -280,7 +281,7 @@ align-self: flex-start;
   flex-direction: column;
   border-left: 2px solid #f8d794;
   padding-left: 0.8rem;
-  align-items: center;
+  
 
 }
 
