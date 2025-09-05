@@ -69,17 +69,7 @@ export const Projects = () => {
             coolers.
           </p>
           <div style={{ display: "flex", gap: "1rem" }}>
-            <div
-              style={{
-                flex: " 1 1 150px",
-                justifyContent: "flex-start",
-              }}
-            >
-              <button className="btn-contact" style={{ marginTop: "1rem" }}>
-                More information
-              </button>
-            </div>
-
+            
             <div
               style={{
                 flex: " 1 1 150px",
@@ -87,7 +77,7 @@ export const Projects = () => {
 
                 paddingTop: "1rem",
                 display: "flex",
-                justifyContent: "flex-end",
+                justifyContent: "start",
               }}
             >
               <div>
@@ -181,16 +171,7 @@ export const Projects = () => {
             status.
           </p>
           <div style={{ display: "flex", gap: "1rem" }}>
-            <div
-              style={{
-                flex: " 1 1 150px",
-                justifyContent: "flex-start",
-              }}
-            >
-              <button className="btn-contact" style={{ marginTop: "1rem" }}>
-                More information
-              </button>
-            </div>
+           
 
             <div
               style={{
@@ -199,7 +180,7 @@ export const Projects = () => {
 
                 paddingTop: "1rem",
                 display: "flex",
-                justifyContent: "flex-end",
+                justifyContent: "start",
               }}
             >
               <div>

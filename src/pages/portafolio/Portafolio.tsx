@@ -3,6 +3,7 @@ import { Experience } from "../../components/Experience";
 import { Home } from "../../components/Home";
 import { Projects } from "../../components/Projects";
 import { Educational } from "../../components/Educational";
+import { Coverage } from "../../components/dashboards/kpis/coverage";
 
 export const Portafolio = () => {
   function scrollToSection(id: string) {
@@ -136,6 +137,10 @@ export const Portafolio = () => {
           style={{ flex: "2", display: "flex", justifyContent: "center" }}
         >
           <Educational />
+        </section>
+
+        <section>
+<Coverage />
         </section>
       </div>
     </div>
