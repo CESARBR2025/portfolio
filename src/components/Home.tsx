@@ -1,7 +1,7 @@
 import "../index.css";
 import { SocialBtn } from "./SocialBtn";
 import profile from "../assets/photos/profile.png";
-import profile_cv from "../assets/photos/profile-cv.jpg";
+
 
 export const Home = () => {
   return (

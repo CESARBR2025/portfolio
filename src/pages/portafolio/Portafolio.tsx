@@ -139,6 +139,20 @@ export const Portafolio = () => {
           <Educational />
         </section>
 
+
+  <section
+          style={{
+            display: "flex",
+            flex: "1",
+            flexDirection: "column",
+            gap: "0.5rem",
+            padding: "1rem",
+            marginTop: "2rem",
+          }}
+        >
+          <div className="font-text-mid">Edit</div>
+          <div className="font-subtitle">Develop in progres...</div>
+        </section>
         <section>
 <Coverage />
         </section>
