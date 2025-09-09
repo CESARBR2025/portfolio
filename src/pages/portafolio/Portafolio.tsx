@@ -139,8 +139,7 @@ export const Portafolio = () => {
           <Educational />
         </section>
 
-
-  <section
+        <section
           style={{
             display: "flex",
             flex: "1",
@@ -151,10 +150,10 @@ export const Portafolio = () => {
           }}
         >
           <div className="font-text-mid">Edit</div>
-          <div className="font-subtitle">Develop in progres...</div>
+          <div className="font-subtitle">Develop in progress...</div>
         </section>
         <section>
-<Coverage />
+          <Coverage />
         </section>
       </div>
     </div>
