@@ -11,23 +11,46 @@ import {
 
 //recharts
 import {
-  AreaChart,
-  Area,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
 
-export const Coverage = () => {
-  const { data, loading, error } = useInsighits();
-  if (loading) return <p>Cargando...</p>;
-  if (error) return <p>Error</p>;
+//Tarjetas de zona
+import { Tarjetas } from "./Tarjetas";
+import { useMemo, useState } from "react";
 
-  console.log(data);
-  console.log(loading);
-  console.log(1);
-  console.log(data?.frecuencia.p_consola_frecuencia);
+export const Coverage = () => {
+  //Estados
+  const [selected, setSelected] = useState<string>("DIRECTO CAPITAL");
+
+  //Consumir api
+  const { data, loading, error } = useInsighits();
+
+  //Pasar string a numericos
+  const charData = data?.kpis.kpis.map((d) => ({
+    ...d,
+    porc_cobertura: Number(d.porc_cobertura),
+    porc_frecuencia: Number(d.porc_frecuencia),
+    porc_coincidencia: Number(d.porc_coincidencia),
+    region_zone: `${d.region} ${d.zone}`,
+  }));
+
+  //Filtrar segun la seleccion
+  const filteredData = useMemo(() => {
+    if (!selected) return charData;
+    return charData?.filter(
+      (item) => `${item.region} ${item.zone}` === selected
+    );
+  }, [selected, charData]);
+
+  console.log(filteredData);
+
+  if (loading) return <p>Cargando data...</p>;
+  if (error) return <p>Error</p>;
 
   return (
     <article style={{ background: "#ECFAF3" }}>
@@ -408,78 +431,104 @@ export const Coverage = () => {
                 flexDirection: "column",
               }}
             >
-              <div style={{ display: "flex", gap: "0.5rem" }}>
-                <div>
-                  <IconClock stroke={1.75} color="#007A55" />
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
+              >
+                <div style={{ display: "flex", gap: "0.5rem" }}>
+                  <div>
+                    <IconClock stroke={1.75} color="#007A55" />
+                  </div>
+                  <div
+                    className="font-text"
+                    style={{
+                      fontWeight: "600",
+                    }}
+                  >
+                    Analisis Temporal Historico
+                  </div>
                 </div>
-                <div
-                  className="font-text"
+
+                <select
+                  value={selected}
+                  onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                    setSelected(e.target.value)
+                  }
+                  className="font-text-mid"
                   style={{
-                    fontWeight: "600",
+                    background: "#F9FAFB",
+                    color: "black",
+                    borderRadius: "0.2rem",
+                    border: "1px solid #dadcdfff",
                   }}
                 >
-                  Analisis Temporal Historico
-                </div>
+                  <option>Selecciona</option>
+                  {charData?.map((item) => (
+                    <option
+                      key={`${item.region}-${item.zone}`}
+                      value={`${item.region} ${item.zone}`}
+                    >
+                      {item.region} {item.zone}
+                    </option>
+                  ))}
+                </select>
               </div>
+
               <div className="font-text-mid" style={{ color: "gray" }}>
                 Evolucion de KPIs desde {data?.kpis.grafica[0]?.Fecha} hasta{" "}
                 {data?.kpis.grafica[data?.kpis.grafica.length - 1]?.Fecha}
               </div>
             </div>
 
-            <div style={{ height: "300px", marginTop: "1rem" }}>
+            <div style={{ height: "250px", marginTop: "2rem" }}>
               <ResponsiveContainer width="100%" height="100%">
-                <AreaChart
+                <BarChart
                   width={500}
-                  height={300}
-                  data={data?.kpis.grafica}
+                  height={250}
+                  data={filteredData}
                   margin={{
-                    top: 0,
+                    top: 20,
                     right: 0,
                     left: 0,
-                    bottom: 0,
+                    bottom: 5,
                   }}
+                  style={{ filter: "drop-shadow(0 2px 2px rgba(0,0,0,0.1))" }}
+                  barGap={15}
                 >
-                  <XAxis dataKey="Fecha" />
-                  <YAxis
-                    tickFormatter={(value) => {
-                      if (value >= 100) {
-                        return `${(value / 1000).toFixed(0)}K`;
-                      }
-                      return value;
-                    }}
-                  />
+                  <XAxis dataKey="region_zone" />
+                  <YAxis tickFormatter={(value) => `${value}%`} />
                   <Tooltip />
-
-                  <Area
-                    type="monotone"
-                    dataKey="Parque"
-                    stroke="#8884d8"
-                    fill="#8884d8"
-                  />
-
-                  <Area
-                    type="monotone"
-                    dataKey="Cobertura"
-                    stroke="#007A55"
-                    fill="#D0FAE5"
-                  />
-
-                  <Area
-                    type="monotone"
-                    dataKey="Coincidencia"
-                    stroke="#BB4D00"
+                  <Bar
+                    dataKey="porc_coincidencia"
                     fill="#FEF3C6"
-                  />
+                    stroke="#BB4D00"
+                    barSize={80}
+                    radius={[10, 10, 0, 0]}
+                    label={{
+                      position: "top",
+                      fontSize: 13,
+                    }}
+                  ></Bar>
 
-                  <Area
-                    type="monotone"
-                    dataKey="Frecuencia"
-                    stroke="#1447E6"
+                  <Bar
+                    dataKey="porc_frecuencia"
                     fill="#DBEAFE"
-                    fillOpacity={1}
+                    stroke="#1447E6"
+                    barSize={80}
+                    radius={[10, 10, 0, 0]}
+                    label={{ position: "top", fontSize: 13 }}
                   />
-                </AreaChart>
+                  <Bar
+                    dataKey="porc_cobertura"
+                    fill="#D0FAE5"
+                    stroke="#007A55"
+                    barSize={80}
+                    radius={[10, 10, 0, 0]}
+                    label={{ position: "top", fontSize: 13 }}
+                  />
+                </BarChart>
               </ResponsiveContainer>
             </div>
           </div>
@@ -507,8 +556,8 @@ export const Coverage = () => {
             </div>
           </div>
 
-          <div style={{ background: "red", marginTop: "1rem" }}>
-            in progress
+          <div style={{ marginTop: "1rem" }}>
+            <Tarjetas data={data?.kpis.kpis} />
           </div>
         </article>
       </section>
