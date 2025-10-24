@@ -15,37 +15,64 @@ export const Experience = () => {
         <div className="timeline-item">
           <div className="timeline-dot"></div>
           <div className="timeline-content">
-            <h3 className="font-subtitle">Imbera México</h3>
-            <span className="font-text-mid">Oct 2024 - Aug 2025</span>
-            <p className="font-text" style={{ color: "#f8d794" }}>
-              Developed internal web tools for cooler monitoring, KPI analysis,
-              and API creation using Django.
-            </p>
+            <h3 className="font-subtitle">
+              FullStack Data Developer | Imbera{" "}
+            </h3>
+            <span className="font-text-mid">
+              San Juan del Río, Qro | October 2024- July 2025
+            </span>
+
+            <ul className="font-text" style={{ color: "#f8d794" }}>
+              <li>
+                Eliminated Tableau dependency by developing custom dashboards,
+                reducing operational costs.
+              </li>
+              <li>
+                Modeled PostgreSQL and BigQuery databases, optimizing data
+                structure and performance.
+              </li>
+              <li>
+                Developing efficient APIs REST with Django and FastAPI, enabling
+                internal fronteds to consume real-time data.
+              </li>
+              <li>
+                Documented data pipelines and queries, facilitating maintenance
+                and data reuse.
+              </li>
+            </ul>
           </div>
         </div>
 
         <div className="timeline-item" style={{ marginTop: "2.5rem" }}>
           <div className="timeline-dot"></div>
-          <div className="timeline-content">
-            <h3 className="font-subtitle">Wep Developer Freelance</h3>
-            <span className="font-text-mid">Ene 2024 - Aug 2024</span>
-            <p className="font-text" style={{ color: "#f8d794" }}>
-              Developer of customized websites for businesses, focused on
-              creating functional solutions to each client's needs
-            </p>
-          </div>
-        </div>
 
-        <div className="timeline-item" style={{ marginTop: "2.5rem" }}>
-          <div className="timeline-dot"></div>
           <div className="timeline-content">
-            <h3 className="font-subtitle">BR Tech </h3>
-            <span className="font-text-mid">Jan 2023 - Dec 2023</span>
-            <p className="font-text" style={{ color: "#f8d794" }}>
-              Founder of a small business providing IT services, Ethernet
-              network installation, security camera implementation and
-              customized technological solutions for local clients
-            </p>
+            <h3 className="font-subtitle">IT Technician | BR TECH</h3>
+            <span className="font-text-mid">
+              San Juan del Río Qro. | January 2021 - August 2024
+            </span>
+            <ul className="font-text" style={{ color: "#f8d794" }}>
+              <li>
+                Managed and implemented corporate networks, ensuring stable and
+                secure internal connectivity.
+              </li>
+              <li>
+                Provided advanced support to operating systems, resolving
+                critical issues.
+              </li>
+              <li>
+                Provided especialized support to hardware, incluiding PCs,
+                laptops and printers.
+              </li>
+              <li>
+                Instaled and configured security cameras for continuous
+                monitoring and incident prevention.
+              </li>
+              <li>
+                Configured and managed servers, ensuring availability and
+                protection of critical data.
+              </li>
+            </ul>
           </div>
         </div>
       </div>

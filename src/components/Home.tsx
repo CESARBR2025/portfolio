@@ -1,5 +1,6 @@
 import "../index.css";
 import { SocialBtn } from "./SocialBtn";
+
 import profile_cv from "../assets/photos/profile-cv.jpg";
 
 export const Home = () => {
@@ -23,7 +24,7 @@ export const Home = () => {
         <p className="font-title">
           <b>Hey!</b> I'm César
           <br />
-          Full-Stack Web Developer building impactful experiences.
+          FullStack Data Developer building impactful experiences.
         </p>
         <div>
           <SocialBtn />
