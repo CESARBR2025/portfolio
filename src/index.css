@@ -262,10 +262,19 @@ html {
 .card-educational {
   flex: 1 1 100px;
   display: grid;
-  grid-template-rows: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   flex-direction: column;
   border-left: 2px solid #f8d794;
   padding-left: 0.8rem;
+}
+
+.course-card {
+  flex: 1 1 200px;
+  font-size: 0.7rem;
+  padding: 0.4rem;
+  display: flex;
+  justify-content: left;
+  cursor: none;
 }
 
 li {

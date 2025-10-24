@@ -5,35 +5,51 @@ export const Educational = () => {
     <div
       style={{
         display: "flex",
-        gap: "0.5rem",
+        flexDirection: "column",
+        gap: "3rem",
         width: "90%",
         marginTop: "1rem",
         marginBottom: "2rem",
       }}
     >
       <div className="card-educational">
-        <div className="font-subtitle-educational">Mahatma Gandhí</div>
-        <div className="font-text-mid">Jan 2013 - Dec 2016</div>
-        <div className="font-text" style={{ color: "#f8d794" }}>
-          Secondary
+        <div className="font-subtitle-educational">
+          Enginering Computacional Systems
         </div>
+        <div className="font-text-mid">
+          Instituto Tecnológico de San Juan del Río
+        </div>
+        <div
+          className="font-text"
+          style={{ color: "#f8d794", marginTop: "0.5rem" }}
+        >
+          Courses:
+        </div>
+        <ul className="font-text-mid">
+          <li>Database | PostgreSQL, Bigquery</li>
+          <li>Fronted | Laravel, React</li>
+          <li>Backend | Java, Python</li>
+          <li>APIs REST | Django, FastAPI</li>
+          <li>DevOps | Github, Docker, FIrebase</li>
+        </ul>
       </div>
 
       <div className="card-educational">
-        <div className="font-subtitle-educational">CBTIS No.145</div>
-        <div className="font-text-mid">Jan 2017 - Jan 2020</div>
-        <div className="font-text" style={{ color: "#f8d794" }}>
-          HighSchool
+        <div className="font-subtitle-educational">IT Technician Systems</div>
+        <div className="font-text-mid">
+          Centro de bachillerato tecnológico industrial y de servicios No. 145
         </div>
-      </div>
-      <div className="card-educational">
-        <div className="font-subtitle-educational">
-          Instituto Tecnológico de San Juan del Río
+        <div
+          className="font-text"
+          style={{ color: "#f8d794", marginTop: "0.5rem" }}
+        >
+          Courses:
         </div>
-        <div className="font-text-mid">Jan 2020 - Ago 2025</div>
-        <div className="font-text" style={{ color: "#f8d794" }}>
-          University
-        </div>
+
+        <ul className="font-text-mid">
+          <li>Maintance | Hardware and Sofware Systems</li>
+          <li>Fronted | Css3, HTML5</li>
+        </ul>
       </div>
     </div>
   );
