@@ -1,7 +1,6 @@
 import "../index.css";
 import { SocialBtn } from "./SocialBtn";
-import profile from "../assets/photos/profile.png";
-
+import profile_cv from "../assets/photos/profile-cv.jpg";
 
 export const Home = () => {
   return (
@@ -40,9 +39,9 @@ export const Home = () => {
       >
         <div
           style={{
-            backgroundImage: `url(${profile})`,
+            backgroundImage: `url(${profile_cv})`,
             aspectRatio: "4/3",
-            backgroundSize: "cover",
+            backgroundSize: "contain",
             backgroundPosition: "center",
             borderRadius: "1rem",
           }}

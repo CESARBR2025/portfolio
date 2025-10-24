@@ -1,19 +1,16 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Portafolio } from "./pages/portafolio/Portafolio";
+import { Coverage } from "./components/dashboards/kpis/coverage";
 import "./index.css";
 
 function App() {
   return (
-    <div
-      className="body-base"
-      style={{
-        minHeight: "200vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "flex-start",
-      }}
-    >
-      <Portafolio />
-    </div>
+    <BrowserRouter basename="/portfolio">
+      <Routes>
+        <Route path="/" element={<Portafolio />} />
+        <Route path="/coverage" element={<Coverage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

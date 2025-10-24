@@ -1,5 +1,6 @@
 import { useInsighits } from "../../../hooks/useInsighits";
 import "../../../index.css";
+
 import {
   IconArrowUp,
   IconChecklist,

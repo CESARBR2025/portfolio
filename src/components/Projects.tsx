@@ -1,4 +1,5 @@
 import "../index.css";
+import { Link } from "react-router-dom";
 import coolview from "../assets/photos/coolview.png";
 import { IconBrandPython } from "@tabler/icons-react";
 import { IconBrandDjango } from "@tabler/icons-react";
@@ -69,7 +70,6 @@ export const Projects = () => {
             coolers.
           </p>
           <div style={{ display: "flex", gap: "1rem" }}>
-            
             <div
               style={{
                 flex: " 1 1 150px",
@@ -170,14 +170,17 @@ export const Projects = () => {
             Interactive dashboards for clear visualization of the cooler fleet
             status.
           </p>
-          <div style={{ display: "flex", gap: "1rem" }}>
-           
-
+          <div
+            style={{
+              display: "flex",
+              gap: "1rem",
+              justifyContent: "space-between",
+            }}
+          >
             <div
               style={{
                 flex: " 1 1 150px",
                 gap: "1rem",
-
                 paddingTop: "1rem",
                 display: "flex",
                 justifyContent: "start",
@@ -199,7 +202,6 @@ export const Projects = () => {
                   style={{ display: "flex" }}
                 />
               </div>
-
               <div>
                 <IconBrandPython
                   stroke={1.75}
@@ -209,6 +211,19 @@ export const Projects = () => {
                 />
               </div>
             </div>
+
+            <Link to={"/coverage"} style={{ textDecoration: "none" }}>
+              <div
+                className="btn-contact-social"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                Open demo
+              </div>
+            </Link>
           </div>
         </div>
       </article>

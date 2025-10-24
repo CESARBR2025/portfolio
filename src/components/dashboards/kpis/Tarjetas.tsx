@@ -9,7 +9,7 @@ type Response = {
 };
 
 type Props = {
-  data: Response[];
+  data?: Response[];
 };
 
 export const Tarjetas = ({ data }: Props) => {
